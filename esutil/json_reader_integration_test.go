@@ -15,6 +15,7 @@
 // specific language governing permissions and limitations
 // under the License.
 
+//go:build integration
 // +build integration
 
 package esutil_test
@@ -23,9 +24,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/elastic/go-elasticsearch/v8"
-	"github.com/elastic/go-elasticsearch/v8/esapi"
-	"github.com/elastic/go-elasticsearch/v8/esutil"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v8"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v8/esapi"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v8/esutil"
 )
 
 func TestJSONReaderIntegration(t *testing.T) {

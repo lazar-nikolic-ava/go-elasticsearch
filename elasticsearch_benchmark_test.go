@@ -15,6 +15,7 @@
 // specific language governing permissions and limitations
 // under the License.
 
+//go:build !integration
 // +build !integration
 
 package elasticsearch_test
@@ -27,8 +28,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/elastic/go-elasticsearch/v8"
-	"github.com/elastic/go-elasticsearch/v8/esapi"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v8"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v8/esapi"
 )
 
 var defaultResponse = http.Response{

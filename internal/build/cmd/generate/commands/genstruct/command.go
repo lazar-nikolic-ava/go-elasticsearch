@@ -20,7 +20,7 @@ package genstruct
 import (
 	"bytes"
 	"fmt"
-	"github.com/elastic/go-elasticsearch/v8/internal/build/cmd"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v8/internal/build/cmd"
 	"go/types"
 	"io"
 	"os"
@@ -32,7 +32,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/elastic/go-elasticsearch/v8/internal/build/utils"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v8/internal/build/utils"
 )
 
 var (
@@ -56,7 +56,7 @@ func init() {
 		pkgNames = strings.Split(pkgNamesEnv, ",")
 	} else {
 		pkgNames = []string{
-			"github.com/elastic/go-elasticsearch/v8/esapi",
+			"github.com/lazar-nikolic-ava/go-elasticsearch/v8/esapi",
 		}
 	}
 
@@ -272,7 +272,7 @@ type API struct {
 				// Some methods are equal to the namespace (like 'rollup.rollup')
 				// and we don't want to have an empty string here.
 				if len(methodName) == 0 {
-				    methodName = strings.Replace(name, n, "", 1)
+					methodName = strings.Replace(name, n, "", 1)
 				}
 				b.WriteString(fmt.Sprintf("\t%s %s\n", methodName, name))
 			}
@@ -309,7 +309,7 @@ func New(t Transport) *API {
 				// Some methods are equal to the namespace (like 'rollup.rollup')
 				// and we don't want to have an empty string here.
 				if len(methodName) == 0 {
-				    methodName = strings.Replace(name, n, "", 1)
+					methodName = strings.Replace(name, n, "", 1)
 				}
 				b.WriteString(fmt.Sprintf("\t\t\t%s: new%sFunc(t),\n", methodName, name))
 			}

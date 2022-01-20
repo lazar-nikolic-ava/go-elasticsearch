@@ -27,7 +27,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/elastic/go-elasticsearch/v8"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v8"
 )
 
 func main() {

@@ -20,7 +20,7 @@ package benchmarks
 import (
 	"bytes"
 
-	"github.com/elastic/go-elasticsearch/v8/benchmarks/runner"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v8/benchmarks/runner"
 )
 
 var (

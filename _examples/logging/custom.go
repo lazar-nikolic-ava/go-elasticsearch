@@ -15,6 +15,7 @@
 // specific language governing permissions and limitations
 // under the License.
 
+//go:build ignore
 // +build ignore
 
 // This examples demonstrates how to implement the "elastictransport.Logger" interface with a custom type,
@@ -32,7 +33,7 @@ import (
 
 	"github.com/rs/zerolog"
 
-	"github.com/elastic/go-elasticsearch/v8"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v8"
 )
 
 // CustomLogger implements the elastictransport.Logger interface.

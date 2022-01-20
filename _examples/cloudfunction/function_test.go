@@ -25,9 +25,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/elastic/go-elasticsearch/v8"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v8"
 
-	"github.com/elastic/go-elasticsearch/v8/_examples/clusterstatus"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v8/_examples/clusterstatus"
 )
 
 // Mock transport replaces the HTTP transport for tests
@@ -36,7 +36,7 @@ type MockTransport struct{}
 // RoundTrip returns a mock response.
 func (t *MockTransport) RoundTrip(req *http.Request) (*http.Response, error) {
 	return &http.Response{
-		Body: ioutil.NopCloser(strings.NewReader(`{"status":"mocked"}`)),
+		Body:   ioutil.NopCloser(strings.NewReader(`{"status":"mocked"}`)),
 		Header: http.Header{"X-Elastic-Product": []string{"Elasticsearch"}},
 	}, nil
 }

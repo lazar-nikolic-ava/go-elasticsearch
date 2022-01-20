@@ -28,7 +28,7 @@ import (
 
 	"gopkg.in/yaml.v2"
 
-	"github.com/elastic/go-elasticsearch/v8/internal/build/utils"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v8/internal/build/utils"
 )
 
 var (
@@ -396,7 +396,7 @@ func (e *Endpoint) RequiredArguments() []MethodArgument {
 	}
 
 	var keys []string
-	for k := range e.URL.Paths[0].Parts{
+	for k := range e.URL.Paths[0].Parts {
 		keys = append(keys, k)
 	}
 	sort.Strings(keys)

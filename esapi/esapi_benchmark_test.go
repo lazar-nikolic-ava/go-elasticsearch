@@ -25,17 +25,17 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/elastic/go-elasticsearch/v8"
-	"github.com/elastic/go-elasticsearch/v8/esapi"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v8"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v8/esapi"
 )
 
 // TODO(karmi): Refactor into a shared mock/testing package
 
 var (
-	defaultResponse    = &http.Response{
+	defaultResponse = &http.Response{
 		StatusCode: 200,
-		Body: ioutil.NopCloser(strings.NewReader("MOCK")),
-		Header: http.Header{"X-Elastic-Product": []string{"Elasticsearch"}},
+		Body:       ioutil.NopCloser(strings.NewReader("MOCK")),
+		Header:     http.Header{"X-Elastic-Product": []string{"Elasticsearch"}},
 	}
 	defaultRoundTripFn = func(*http.Request) (*http.Response, error) { return defaultResponse, nil }
 	errorRoundTripFn   = func(*http.Request) (*http.Response, error) {
