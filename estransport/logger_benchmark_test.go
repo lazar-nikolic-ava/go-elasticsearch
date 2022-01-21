@@ -15,6 +15,7 @@
 // specific language governing permissions and limitations
 // under the License.
 
+//go:build !integration
 // +build !integration
 
 package estransport_test
@@ -26,7 +27,7 @@ import (
 	"net/url"
 	"testing"
 
-	"github.com/elastic/go-elasticsearch/v7/estransport"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v7/estransport"
 )
 
 func BenchmarkTransportLogger(b *testing.B) {

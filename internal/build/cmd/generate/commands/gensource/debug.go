@@ -23,7 +23,7 @@ import (
 	"strings"
 	"text/tabwriter"
 
-	"github.com/elastic/go-elasticsearch/v7/internal/build/utils"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v7/internal/build/utils"
 )
 
 // DebugInfo returns information about the endpoint as a string.

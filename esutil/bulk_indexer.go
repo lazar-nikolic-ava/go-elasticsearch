@@ -31,9 +31,9 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/elastic/go-elasticsearch/v7"
-	"github.com/elastic/go-elasticsearch/v7/esapi"
-	"github.com/elastic/go-elasticsearch/v7/estransport"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v7"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v7/esapi"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v7/estransport"
 )
 
 // BulkIndexer represents a parallel, asynchronous, efficient indexer for Elasticsearch.
@@ -430,7 +430,7 @@ func (w *worker) writeMeta(item BulkIndexerItem) error {
 		if item.DocumentID != "" {
 			w.buf.WriteRune(',')
 		}
-		w.buf.WriteString(`"_routing":`)
+		w.buf.WriteString(`"routing":`)
 		w.aux = strconv.AppendQuote(w.aux, item.Routing)
 		w.buf.Write(w.aux)
 		w.aux = w.aux[:0]

@@ -15,6 +15,7 @@
 // specific language governing permissions and limitations
 // under the License.
 
+//go:build ignore
 // +build ignore
 
 package main
@@ -36,14 +37,14 @@ import (
 
 	"github.com/dustin/go-humanize"
 
-	"github.com/elastic/go-elasticsearch/v7"
-	"github.com/elastic/go-elasticsearch/v7/esutil"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v7"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v7/esutil"
 
 	"go.elastic.co/apm"
 	"go.elastic.co/apm/module/apmelasticsearch"
 
-	"github.com/elastic/go-elasticsearch/v7/_examples/bulk/kafka/consumer"
-	"github.com/elastic/go-elasticsearch/v7/_examples/bulk/kafka/producer"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v7/_examples/bulk/kafka/consumer"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v7/_examples/bulk/kafka/producer"
 )
 
 var (

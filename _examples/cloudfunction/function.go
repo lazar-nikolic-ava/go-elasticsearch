@@ -39,7 +39,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/elastic/go-elasticsearch/v7"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v7"
 )
 
 // ES holds a reference to the Elasticsearch client

@@ -15,6 +15,7 @@
 // specific language governing permissions and limitations
 // under the License.
 
+//go:build ignore
 // +build ignore
 
 // This collection of examples demonstrates how to configure the default logger of the client.
@@ -31,8 +32,8 @@ import (
 	"os"
 	"strings"
 
-	"github.com/elastic/go-elasticsearch/v7"
-	"github.com/elastic/go-elasticsearch/v7/estransport"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v7"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v7/estransport"
 )
 
 func main() {

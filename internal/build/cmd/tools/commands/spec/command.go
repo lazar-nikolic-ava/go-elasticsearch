@@ -22,10 +22,6 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"github.com/elastic/go-elasticsearch/v7/internal/build/cmd"
-	"github.com/elastic/go-elasticsearch/v7/internal/build/utils"
-	"github.com/elastic/go-elasticsearch/v7/internal/version"
-	"github.com/spf13/cobra"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -34,6 +30,11 @@ import (
 	"path/filepath"
 	"strings"
 	"time"
+
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v7/internal/build/cmd"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v7/internal/build/utils"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v7/internal/version"
+	"github.com/spf13/cobra"
 )
 
 var (
@@ -200,7 +201,7 @@ type Build struct {
 }
 
 func NewBuild() Build {
-	t := time.Date(1970, 0,0,0,0,0,0, time.UTC)
+	t := time.Date(1970, 0, 0, 0, 0, 0, 0, time.UTC)
 	startTime := BuildStartTime{Time: &t}
 	return Build{StartTime: startTime}
 }

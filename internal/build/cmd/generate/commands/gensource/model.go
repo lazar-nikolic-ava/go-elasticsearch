@@ -28,7 +28,7 @@ import (
 
 	"gopkg.in/yaml.v2"
 
-	"github.com/elastic/go-elasticsearch/v7/internal/build/utils"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v7/internal/build/utils"
 )
 
 var (

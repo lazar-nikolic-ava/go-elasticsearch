@@ -27,7 +27,7 @@ import (
 
 	"go.elastic.co/apm"
 
-	"github.com/elastic/go-elasticsearch/v7/esutil"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v7/esutil"
 )
 
 type Consumer struct {

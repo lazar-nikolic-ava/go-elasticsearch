@@ -15,6 +15,7 @@
 // specific language governing permissions and limitations
 // under the License.
 
+//go:build !integration
 // +build !integration
 
 package esutil
@@ -38,8 +39,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/elastic/go-elasticsearch/v7"
-	"github.com/elastic/go-elasticsearch/v7/estransport"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v7"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v7/estransport"
 )
 
 var infoBody = `{
@@ -280,7 +281,7 @@ func TestBulkIndexer(t *testing.T) {
 					return &http.Response{
 						StatusCode: http.StatusOK,
 						Status:     "200 OK",
-						Body:       ioutil.NopCloser(strings.NewReader(`{
+						Body: ioutil.NopCloser(strings.NewReader(`{
 						  "version" : {
 							"number" : "7.14.0-SNAPSHOT",
 							"build_flavor" : "default"
@@ -459,7 +460,7 @@ func TestBulkIndexer(t *testing.T) {
 					return &http.Response{
 						StatusCode: http.StatusOK,
 						Status:     "200 OK",
-						Body:       ioutil.NopCloser(strings.NewReader(`{
+						Body: ioutil.NopCloser(strings.NewReader(`{
 						  "version" : {
 							"number" : "7.14.0-SNAPSHOT",
 							"build_flavor" : "default"
@@ -533,7 +534,7 @@ func TestBulkIndexer(t *testing.T) {
 						return &http.Response{
 							StatusCode: http.StatusOK,
 							Status:     "200 OK",
-							Body:       ioutil.NopCloser(strings.NewReader(`{
+							Body: ioutil.NopCloser(strings.NewReader(`{
 						  "version" : {
 							"number" : "7.14.0-SNAPSHOT",
 							"build_flavor" : "default"
@@ -645,7 +646,7 @@ func TestBulkIndexer(t *testing.T) {
 		}
 	})
 	t.Run("Worker.writeMeta()", func(t *testing.T) {
-		v:=int64(23)
+		v := int64(23)
 		type args struct {
 			item BulkIndexerItem
 		}
@@ -687,9 +688,9 @@ func TestBulkIndexer(t *testing.T) {
 			{
 				"with version and no document",
 				args{BulkIndexerItem{
-					Action:     "index",
-					Index:      "test",
-					Version:    &v,
+					Action:  "index",
+					Index:   "test",
+					Version: &v,
 				}},
 				`{"index":{"_index":"test"}}` + "\n",
 			},

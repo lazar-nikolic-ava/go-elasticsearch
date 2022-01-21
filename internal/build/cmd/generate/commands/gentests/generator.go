@@ -220,9 +220,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/elastic/go-elasticsearch/v7"
-	"github.com/elastic/go-elasticsearch/v7/esapi"
-	"github.com/elastic/go-elasticsearch/v7/estransport"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v7"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v7/esapi"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v7/estransport"
 )
 
 var (

@@ -34,9 +34,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/elastic/go-elasticsearch/v7/esapi"
-	"github.com/elastic/go-elasticsearch/v7/estransport"
-	"github.com/elastic/go-elasticsearch/v7/internal/version"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v7/esapi"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v7/estransport"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v7/internal/version"
 )
 
 var (
@@ -304,7 +304,7 @@ func (c *Client) Perform(req *http.Request) (*http.Response, error) {
 	res, err := c.Transport.Perform(req)
 
 	// ResponseCheck path continues, we run the header check on the first answer from ES.
-	if err == nil && (res.StatusCode >= 200 && res.StatusCode < 300){
+	if err == nil && (res.StatusCode >= 200 && res.StatusCode < 300) {
 		checkHeader := func(context.Context) error {
 			return genuineCheckHeader(res.Header)
 		}

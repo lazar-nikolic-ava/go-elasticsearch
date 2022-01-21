@@ -15,6 +15,7 @@
 // specific language governing permissions and limitations
 // under the License.
 
+//go:build !integration
 // +build !integration
 
 package esutil_test
@@ -28,7 +29,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/elastic/go-elasticsearch/v7/esutil"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v7/esutil"
 )
 
 var _ = fmt.Print

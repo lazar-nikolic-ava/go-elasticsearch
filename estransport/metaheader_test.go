@@ -22,7 +22,7 @@ import (
 	"runtime"
 	"testing"
 
-	"github.com/elastic/go-elasticsearch/v7/internal/version"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v7/internal/version"
 )
 
 var (

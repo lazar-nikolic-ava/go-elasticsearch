@@ -15,6 +15,7 @@
 // specific language governing permissions and limitations
 // under the License.
 
+//go:build integration
 // +build integration
 
 package estransport_test
@@ -30,8 +31,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/elastic/go-elasticsearch/v7/estransport"
-	"github.com/elastic/go-elasticsearch/v7/esutil"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v7/estransport"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v7/esutil"
 )
 
 var (
@@ -120,7 +121,7 @@ func TestTransportCompression(t *testing.T) {
 	u, _ := url.Parse("http://localhost:9200")
 
 	transport, _ := estransport.New(estransport.Config{
-		URLs: []*url.URL{u},
+		URLs:                []*url.URL{u},
 		CompressRequestBody: true,
 	})
 

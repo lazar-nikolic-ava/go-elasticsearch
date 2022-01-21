@@ -15,6 +15,7 @@
 // specific language governing permissions and limitations
 // under the License.
 
+//go:build !integration
 // +build !integration
 
 package elasticsearch_test
@@ -27,8 +28,8 @@ import (
 	"os"
 	"time"
 
-	"github.com/elastic/go-elasticsearch/v7"
-	"github.com/elastic/go-elasticsearch/v7/estransport"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v7"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v7/estransport"
 )
 
 func init() {
@@ -72,7 +73,7 @@ func ExampleNewClient() {
 }
 
 func ExampleNewClient_logger() {
-	// import "github.com/elastic/go-elasticsearch/v7/estransport"
+	// import "github.com/lazar-nikolic-ava/go-elasticsearch/v7/estransport"
 
 	// Use one of the bundled loggers:
 	//

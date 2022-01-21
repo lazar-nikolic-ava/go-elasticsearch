@@ -15,6 +15,7 @@
 // specific language governing permissions and limitations
 // under the License.
 
+//go:build !integration
 // +build !integration
 
 package elasticsearch
@@ -34,7 +35,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/elastic/go-elasticsearch/v7/estransport"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v7/estransport"
 )
 
 var called bool
@@ -473,7 +474,7 @@ func TestGenuineCheckInfo(t *testing.T) {
 		name    string
 		info    info
 		wantErr bool
-		err 	error
+		err     error
 	}{
 		{
 			name: "Genuine Elasticsearch 7.14.0",
@@ -485,7 +486,7 @@ func TestGenuineCheckInfo(t *testing.T) {
 				Tagline: "You Know, for Search",
 			},
 			wantErr: false,
-			err: nil,
+			err:     nil,
 		},
 		{
 			name: "Genuine Elasticsearch 6.15.1",
@@ -497,7 +498,7 @@ func TestGenuineCheckInfo(t *testing.T) {
 				Tagline: "You Know, for Search",
 			},
 			wantErr: false,
-			err: nil,
+			err:     nil,
 		},
 		{
 			name: "Not so genuine Elasticsearch 7 major",
@@ -509,7 +510,7 @@ func TestGenuineCheckInfo(t *testing.T) {
 				Tagline: "You Know, for Search",
 			},
 			wantErr: true,
-			err: errors.New(unknownProduct),
+			err:     errors.New(unknownProduct),
 		},
 		{
 			name: "Not so genuine Elasticsearch 6 major",
@@ -521,7 +522,7 @@ func TestGenuineCheckInfo(t *testing.T) {
 				Tagline: "You Know, for Fun",
 			},
 			wantErr: true,
-			err: errors.New(unknownProduct),
+			err:     errors.New(unknownProduct),
 		},
 		{
 			name: "Way older Elasticsearch major",
@@ -533,7 +534,7 @@ func TestGenuineCheckInfo(t *testing.T) {
 				Tagline: "You Know, for Fun",
 			},
 			wantErr: true,
-			err: errors.New(unknownProduct),
+			err:     errors.New(unknownProduct),
 		},
 		{
 			name: "Elasticsearch oss",
@@ -545,7 +546,7 @@ func TestGenuineCheckInfo(t *testing.T) {
 				Tagline: "You Know, for Search",
 			},
 			wantErr: true,
-			err: errors.New(unsupportedProduct),
+			err:     errors.New(unsupportedProduct),
 		},
 	}
 	for _, tt := range tests {
@@ -631,7 +632,7 @@ func TestResponseCheckOnly(t *testing.T) {
 			useResponseCheckOnly: true,
 			response: &http.Response{
 				StatusCode: http.StatusOK,
-				Body: ioutil.NopCloser(strings.NewReader("{}")),
+				Body:       ioutil.NopCloser(strings.NewReader("{}")),
 			},
 			wantErr: true,
 		},
@@ -645,42 +646,42 @@ func TestResponseCheckOnly(t *testing.T) {
 		{
 			name:                 "Valid request, 500 response",
 			useResponseCheckOnly: false,
-			response:             &http.Response{
+			response: &http.Response{
 				StatusCode: http.StatusInternalServerError,
-				Body: ioutil.NopCloser(strings.NewReader("")),
+				Body:       ioutil.NopCloser(strings.NewReader("")),
 			},
-			requestErr:           nil,
-			wantErr:              true,
+			requestErr: nil,
+			wantErr:    true,
 		},
 		{
 			name:                 "Valid request, 404 response",
 			useResponseCheckOnly: false,
-			response:             &http.Response{
+			response: &http.Response{
 				StatusCode: http.StatusNotFound,
-				Body: ioutil.NopCloser(strings.NewReader("")),
+				Body:       ioutil.NopCloser(strings.NewReader("")),
 			},
-			requestErr:           nil,
-			wantErr:              true,
+			requestErr: nil,
+			wantErr:    true,
 		},
 		{
 			name:                 "Valid request, 403 response",
 			useResponseCheckOnly: false,
-			response:             &http.Response{
+			response: &http.Response{
 				StatusCode: http.StatusForbidden,
-				Body: ioutil.NopCloser(strings.NewReader("")),
+				Body:       ioutil.NopCloser(strings.NewReader("")),
 			},
-			requestErr:           nil,
-			wantErr:              false,
+			requestErr: nil,
+			wantErr:    false,
 		},
 		{
 			name:                 "Valid request, 401 response",
 			useResponseCheckOnly: false,
-			response:             &http.Response{
+			response: &http.Response{
 				StatusCode: http.StatusUnauthorized,
-				Body: ioutil.NopCloser(strings.NewReader("")),
+				Body:       ioutil.NopCloser(strings.NewReader("")),
 			},
-			requestErr:           nil,
-			wantErr:              false,
+			requestErr: nil,
+			wantErr:    false,
 		},
 	}
 	for _, tt := range tests {
@@ -698,7 +699,6 @@ func TestResponseCheckOnly(t *testing.T) {
 		})
 	}
 }
-
 
 func TestProductCheckError(t *testing.T) {
 	var requestPaths []string
@@ -735,7 +735,6 @@ func TestProductCheckError(t *testing.T) {
 		t.Fatalf("product check should be valid, got : %v", c.productCheckSuccess)
 	}
 }
-
 
 func TestCompatibilityHeader(t *testing.T) {
 	client, err := NewClient(Config{
@@ -778,8 +777,6 @@ func TestCompatibilityHeader(t *testing.T) {
 	)
 }
 
-
-
 func TestFingerprint(t *testing.T) {
 	body := []byte(`{"body": true"}"`)
 	server := httptest.NewTLSServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
@@ -789,7 +786,7 @@ func TestFingerprint(t *testing.T) {
 	defer server.Close()
 
 	config := Config{
-		Addresses: []string{server.URL},
+		Addresses:    []string{server.URL},
 		DisableRetry: true,
 	}
 

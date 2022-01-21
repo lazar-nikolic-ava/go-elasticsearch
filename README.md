@@ -2,7 +2,7 @@
 
 The official Go client for [Elasticsearch](https://www.elastic.co/products/elasticsearch).
 
-[![GoDoc](https://godoc.org/github.com/elastic/go-elasticsearch?status.svg)](https://pkg.go.dev/github.com/elastic/go-elasticsearch/v7)
+[![GoDoc](https://godoc.org/github.com/elastic/go-elasticsearch?status.svg)](https://pkg.go.dev/github.com/lazar-nikolic-ava/go-elasticsearch/v7)
 [![Go Report Card](https://goreportcard.com/badge/github.com/elastic/go-elasticsearch)](https://goreportcard.com/report/github.com/elastic/go-elasticsearch)
 [![codecov.io](https://codecov.io/github/elastic/go-elasticsearch/coverage.svg?branch=main)](https://codecov.io/gh/elastic/go-elasticsearch?branch=main)
 [![Build](https://github.com/elastic/go-elasticsearch/workflows/Build/badge.svg)](https://github.com/elastic/go-elasticsearch/actions?query=branch%3Amain)
@@ -17,19 +17,19 @@ Elasticsearch language clients are only backwards compatible with default distri
 
 When using Go modules, include the version in the import path, and specify either an explicit version or a branch:
 
-    require github.com/elastic/go-elasticsearch/v7 7.16
-    require github.com/elastic/go-elasticsearch/v7 7.0.0
+    require github.com/lazar-nikolic-ava/go-elasticsearch/v7 7.16
+    require github.com/lazar-nikolic-ava/go-elasticsearch/v7 7.0.0
 
 It's possible to use multiple versions of the client in a single project:
 
     // go.mod
     github.com/elastic/go-elasticsearch/v6 6.x
-    github.com/elastic/go-elasticsearch/v7 7.16
+    github.com/lazar-nikolic-ava/go-elasticsearch/v7 7.16
 
     // main.go
     import (
       elasticsearch6 "github.com/elastic/go-elasticsearch/v6"
-      elasticsearch7 "github.com/elastic/go-elasticsearch/v7"
+      elasticsearch7 "github.com/lazar-nikolic-ava/go-elasticsearch/v7"
     )
     // ...
     es6, _ := elasticsearch6.NewDefaultClient()
@@ -66,7 +66,7 @@ cat > main.go <<-END
   import (
     "log"
 
-    "github.com/elastic/go-elasticsearch/v7"
+    "github.com/lazar-nikolic-ava/go-elasticsearch/v7"
   )
 
   func main() {
@@ -188,8 +188,8 @@ import (
   "strings"
   "sync"
 
-  "github.com/elastic/go-elasticsearch/v7"
-  "github.com/elastic/go-elasticsearch/v7/esapi"
+  "github.com/lazar-nikolic-ava/go-elasticsearch/v7"
+  "github.com/lazar-nikolic-ava/go-elasticsearch/v7/esapi"
 )
 
 func main() {

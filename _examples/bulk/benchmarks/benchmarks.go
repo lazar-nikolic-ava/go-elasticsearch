@@ -15,6 +15,7 @@
 // specific language governing permissions and limitations
 // under the License.
 
+//go:build ignore
 // +build ignore
 
 // This example demonstrates indexing documents using the esutil.BulkIndexer helper.
@@ -41,12 +42,12 @@ import (
 	"github.com/mailru/easyjson"
 	"github.com/valyala/fasthttp"
 
-	"github.com/elastic/go-elasticsearch/v7"
-	"github.com/elastic/go-elasticsearch/v7/estransport"
-	"github.com/elastic/go-elasticsearch/v7/esutil"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v7"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v7/estransport"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v7/esutil"
 
-	"github.com/elastic/go-elasticsearch/v7/_examples/bulk/benchmarks/model"
-	"github.com/elastic/go-elasticsearch/v7/_examples/bulk/benchmarks/runner"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v7/_examples/bulk/benchmarks/model"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v7/_examples/bulk/benchmarks/runner"
 )
 
 type humanBytes uint64

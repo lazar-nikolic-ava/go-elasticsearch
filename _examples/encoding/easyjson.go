@@ -26,12 +26,12 @@ import (
 	"strings"
 	"time"
 
-	"github.com/elastic/go-elasticsearch/v7"
-	"github.com/elastic/go-elasticsearch/v7/esapi"
 	"github.com/fatih/color"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v7"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v7/esapi"
 	"github.com/mailru/easyjson"
 
-	"github.com/elastic/go-elasticsearch/v7/_examples/encoding/model"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v7/_examples/encoding/model"
 )
 
 var (

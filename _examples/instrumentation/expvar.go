@@ -32,12 +32,13 @@ import (
 	// Import the "expvar" and "pprof" package >>>>>>>>>>
 	"net/http"
 	_ "net/http/pprof"
+
 	// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 	"golang.org/x/crypto/ssh/terminal"
 
-	"github.com/elastic/go-elasticsearch/v7"
-	"github.com/elastic/go-elasticsearch/v7/estransport"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v7"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v7/estransport"
 )
 
 var (

@@ -24,8 +24,8 @@ import (
 	"log"
 	"strings"
 
-	"github.com/elastic/go-elasticsearch/v7"
 	"github.com/fatih/color"
+	"github.com/lazar-nikolic-ava/go-elasticsearch/v7"
 	"github.com/tidwall/gjson"
 )
 
